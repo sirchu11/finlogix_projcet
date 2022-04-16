@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "module": "commonjs",
+        "target": "es5",
+        "jsx": "react-jsx",
+        "baseUrl": "./src",
+        "paths": {
+            "@images/*": ["assets/images/*"],
+            "@scss/*": ["assets/scss/*"],
+            "@components/*": ["components/*"],
+        }
+    },
+    "include": [
+        "./src/**/*"
+    ]
+}
