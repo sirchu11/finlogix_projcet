@@ -1,18 +1,26 @@
-import { useEffect } from 'react';
+import { createContext } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import ReactImage from '@image/react.png';
+import routes from './router';
+import Header from '@component/header';
 import styled from 'styled-components';
+
+export const DataContext = createContext(null);
 
 export default () => {
   return (
-    <Container margin ={'20px 0 0 40px'}>
-      <img src={ReactImage} alt="" />
-      <h1>ABCDEFGHIGJLMNOPQRSTUVWXYZ</h1>
-      <div></div>
-    </Container>
+    <BrowserRouter>
+      <DataContext.Provider value={null}>
+        <Header />
+        <Routes>
+          {routes.map((route, i) => (
+            <Route key={i} {...route} />
+          ))}
+        </Routes>
+      </DataContext.Provider>
+    </BrowserRouter>
   );
 };
 
 const Container = styled.div<{ margin: string }>`
-    margin: ${(props) => props.margin || 'auto'}
-`
+  margin: ${(props) => props.margin || 'auto'};
+`;
