@@ -1,16 +1,28 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useContext, useEffect } from 'react';
+import { DataContext } from '../app';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '@image/logo.png';
-
 import styled from 'styled-components';
 
 export default () => {
+  let { Dispatch } = useContext(DataContext);
+  let location = useLocation();
+  useEffect(() => {
+    if (location.pathname === '/login') {
+      Dispatch({ type: 'SHOW_HEADER', payload: false });
+    }
+  }, []);
   return (
     <Container>
       <LogoImage to={'/'}>
         <img src={logo} alt="logo.png" />
       </LogoImage>
-      <LoginButton to={'/login'}>login</LoginButton>
+      <LoginButton
+        to={'/login'}
+        onClick={() => Dispatch({ type: 'SHOW_HEADER', payload: false })}
+      >
+        login
+      </LoginButton>
     </Container>
   );
 };

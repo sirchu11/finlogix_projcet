@@ -1,6 +1,11 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 
 export default () => {
-  return <div>loading</div>;
+  return <Container>loading</Container>;
 };
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;

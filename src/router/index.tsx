@@ -3,7 +3,7 @@ import NoMatch from '@component/noMatch';
 import Loading from '@component/loading';
 
 const Home = lazy(() => import('@page/home'));
-const Login = lazy(() => import('@page/Login'));
+const Login = lazy(() => import('@page/login'));
 
 const Element = (view: JSX.Element) => {
   return <Suspense fallback={<Loading />}>{view}</Suspense>;
