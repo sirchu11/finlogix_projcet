@@ -17,6 +17,7 @@ module.exports = {
         '@image': path.resolve(__dirname, 'src/assets/images'),
         '@scss': path.resolve(__dirname, 'src/assets/scss'),
         '@component': path.resolve(__dirname, 'src/components'),
+        '@page': path.resolve(__dirname, 'src/pages'),
       },
   },
   plugins: [

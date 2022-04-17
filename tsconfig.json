@@ -8,9 +8,10 @@
         "jsx": "react-jsx",
         "baseUrl": "./src",
         "paths": {
-            "@images/*": ["assets/images/*"],
+            "@image/*": ["assets/images/*"],
             "@scss/*": ["assets/scss/*"],
-            "@components/*": ["components/*"],
+            "@component/*": ["components/*"],
+            "@page/*": ["pages/*"],
         }
     },
     "include": [
